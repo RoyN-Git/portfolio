@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+<body>
+<header id="home">
+    <nav class="topNav" id="myTopnav">
+        <a href="#home">HOME</a>
+        <a href="#about">ABOUT ME</a>
+        <a href="#portfolio">PORTFOLIO</a>
+        <a href="#contacts">CONTACT ME</a>
+        <a href="javascript:0;" class="icon hamburger" onclick="myFunction()">
+            <i class="fa fa-bars hamburger"></i>
+        </a>
+    </nav>
+    <h1>Eugenio Piccoli,<br> UX designer</h1>
+</header>
+
+<script>
+    function myFunction() {
+        let x = document.getElementById("myTopnav");
+        if (x.className === "topNav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topNav";
+        }
+    }
+</script>
+
+
+<section id="about">
+    <div id="imgwrap">
+        <img src="fototessera_nuova.jpg" alt="Profile photo">
+    </div>
+    <div id="aboutme">
+        <h2>About me</h2>
+        <p>Hi, I'm Eugenio Piccoli. I am currently a master's student in HCI at Università degli studi di Trento.
+            <br>My goal is to become capable of following a UX project entirely, from Research to Implementation.
+            <br>I am always trying improve myself by learning new tools, methods and skills.
+            <br><br><strong>Skills: </strong> UX research, UX design, Prototyping, HTML, CSS, Python.
+        </p>
+    </div>
+</section>
+
+
+<section id="portfolio">
+    <h2>Portfolio</h2>
+    <div class="card">
+        <img src="mockup1.png" height="476" width="866" alt="Prototype screenshot of Bloomin application">
+        <p>Bloomin project</p>
+        <button class="open-window">Open Project</button>
+    </div>
+    <div class="window closed">
+        <h3>Bloomin project</h3>
+        <p>I did this project during university. In a team we designed from scratch an application,
+            starting from analysing existing platforms/apps and tailoring the design to the needs of a
+            local city project. We devised wireframes and more advanced prototypes, tested with users using
+            think aloud and questionnaires</p>
+        <p>You can find more information about the project <a href="https:\\www.google.com">here</a>.</p>
+        <button class="close-window">Close</button>
+    </div>
+    <div class="modal-overlay closed"></div>
+
+    <script>
+
+        let modal = document.querySelector(".window")
+        let openButton = document.querySelector(".open-window")
+        let closeButton = document.querySelector(".close-window")
+        let modalOverlay = document.querySelector(".modal-overlay")
+
+        closeButton.addEventListener("click", function() {
+            modal.classList.toggle("closed");
+            modalOverlay.classList.toggle("closed")
+        });
+
+        openButton.addEventListener("click", function() {
+            modal.classList.toggle("closed");
+            modalOverlay.classList.toggle("closed")
+        });
+
+        modalOverlay.addEventListener("click", function () {
+            modal.classList.add("closed");
+            modalOverlay.classList.add("closed")
+        })
+
+    </script>
+
+</section>
+
+
+<section id="contacts">
+    <h2>Contacts</h2>
+    <p>You can contact me at: <a href="mailto:eugi.piccoli@gmail.com">eugi.piccoli@gmail.com</a></p>
+    <div class="social_wrap">
+        <img src="github.svg" height="48" width="48" alt="Github icon link">
+        <img src="facebook.svg" height="48" width="48" alt="Github icon link">
+        <img src="twitter.svg" height="48" width="48" alt="Github icon link">
+        <img src="instagram%201.svg" height="48" width="48" alt="Github icon link">
+    </div>
+</section>
+
+
+<footer>
+    <h3>EUGENIO PICCOLI</h3>
+    <p>2021</p>
+</footer>
+</body>
+</html>
